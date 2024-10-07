@@ -3,7 +3,7 @@ const array = [1, 2, 3, 3, 4, 5, 5];
 //
 // Realization #1 complexity O(2^n)
 //
-//const filteredArray = array.filter((el, idx, arr) => arr.indexOf(el) === idx);
+const filteredArray = array.filter((el, idx, arr) => arr.indexOf(el) === idx);
 
 //
 // Realization #2 complexity O(2^n)
