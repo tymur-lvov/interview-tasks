@@ -1,14 +1,5 @@
-const array = [1, 2, 3, [1, 2, 3, { a: 4, b: 5 }], 4, 5];
+const array = [1, 2, 3, [4, 5, 6, { a: 1, b: 2 }], 7, 8];
 
-const FlattenTheArray = (arr) => {
-  return arr.reduce((acc, el) => {
-    if (!Array.isArray(el)) {
-      acc.push(el);
-    } else {
-      acc.push(...FlattenTheArray(el));
-    }
-    return acc;
-  }, []);
-};
+//const flattenTheArray =
 
-console.log(FlattenTheArray(array));
+console.log(flattenTheArray(array));
