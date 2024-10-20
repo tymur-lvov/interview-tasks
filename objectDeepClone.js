@@ -1,14 +1,14 @@
 const object = { a: 1, b: 2, c: { d: 3, e: 4 }, f: null };
 
 const objectDeepClone = (obj) => {
-  return Object.keys(obj).reduce((acc, el) => {
-    if (typeof obj[el] === 'object' && obj[el] !== null) {
-      acc[el] = objectDeepClone(obj[el]);
+  return Object.keys(obj).reduce((newObj, key) => {
+    if (typeof obj[key] === 'object' && obj[key] !== null) {
+      newObj[key] = objectDeepClone(obj[key]);
     } else {
-      acc[el] = obj[el];
+      newObj[key] = obj[key];
     }
 
-    return acc;
+    return newObj;
   }, {});
 };
 
