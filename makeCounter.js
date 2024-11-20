@@ -2,13 +2,13 @@ const makeCounter = () => {
   let counter = 0;
 
   const incrementByValue = (value) => {
-    counter = counter + value;
+    counter += value;
 
     return counter;
   };
 
   const decrementByValue = (value) => {
-    counter = counter - value;
+    counter -= value;
 
     return counter;
   };
