@@ -1,4 +1,4 @@
-const makeCounter = () => {
+const createCounter = () => {
   let counter = 0;
 
   const incrementByValue = (value) => {
