@@ -1,8 +1,22 @@
-const filterActive = (users) => users.filter((user) => user.isActive);
+class UserProcessor {
+  constructor(users) {
+    this.users = users;
+  }
 
-const sortByAge = (users) => users.sort((a, b) => a.age - b.age);
+  filterActive() {
+    this.users = this.users.filter((user) => user.isActive);
+    return this;
+  }
 
-const getEmails = (users) => users.map((user) => user.email);
+  sortByAge() {
+    this.users = this.users.sort((a, b) => a.age - b.age);
+    return this;
+  }
+
+  getEmails() {
+    return this.users.map((user) => user.email);
+  }
+}
 
 const users = [
   { name: 'Alice', age: 25, email: 'alice@mail.com', isActive: true },
@@ -10,6 +24,8 @@ const users = [
   { name: 'Charlie', age: 20, email: 'charlie@mail.com', isActive: true },
 ];
 
-const emails = getEmails(sortByAge(filterActive(users)));
+const processor = new UserProcessor(users);
+
+const emails = processor.filterActive().sortByAge().getEmails();
 
 console.log(emails);
